@@ -73,7 +73,7 @@
                 <a href="index.html" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Home</a>
                 <a href="about.html" class="text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-white">About</a>
                 <a href="index.html#ecosystem" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Ecosystem</a>
-                <span class="text-zinc-500 cursor-not-allowed flex items-center gap-1">Speaking <span class="text-[9px] tracking-normal text-zinc-600 font-light lowercase italic">(soon)</span></span>
+                <a href="speaking.html" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Speaking</a>
             </nav>
             
             <div class="flex items-center gap-4">
@@ -92,12 +92,12 @@
             </div>
         </div>
 
-        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 bg-onyx/75 backdrop-blur-xl border-b editorial-border z-40 flex flex-col justify-between p-8 pt-32 transition-all duration-500 opacity-0 transform translate-y-[-10px]">
+        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-2xl border-b editorial-border flex-col justify-between p-8 pt-32 transition-all duration-500 opacity-0 transform translate-y-[-10px] z-40">
             <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400">
                 <a href="index.html" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Home</a>
                 <a href="about.html" class="text-white border-b border-zinc-800/50 pb-2">About</a>
                 <a href="index.html#ecosystem" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Ecosystem</a>
-                <span class="text-zinc-600 cursor-not-allowed text-sm flex items-center gap-1 italic lowercase">Speaking Menu (soon)</span>
+                <a href="speaking.html" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Speaking</a>
             </nav>
             <div class="space-y-6">
                 <a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">
@@ -174,7 +174,7 @@
                     <div class="space-y-2">
                         <h4 class="text-lg md:text-2xl font-bold tracking-tight text-white">Production Ecosystem Footprint</h4>
                         <p class="text-zinc-200 font-light text-sm leading-relaxed text-justify sm:text-left">
-                            Successfully architected, configured, and deployed functional production platforms, including BrandingOff (an all-in-one workspace and design tool designed to eliminate the tedious, repetitive, and time-consuming tasks associated with client projects, allowing brand designers to focus on creative work), TickOff (a robust productivity suite designed for busy individuals like creatives, students, and professionals, TickOff helps users manage tasks, build focus, and consistency through a variety of smart productivity tools), and WetinRemain (a web-based tax calculator designed to help Nigerian professionals accurately calculate their take-home pay, tax deductions, pension, and rent relief based on the current Nigerian tax regulations), all processing active global consumer tasks.
+                            Successfully architected, configured, and deployed functional production platforms, including BrandingOff, TickOff, and WetinRemain, all processing active global consumer tasks.
                         </p>
                     </div>
 
@@ -281,7 +281,9 @@
 
             trigger.addEventListener('click', () => {
                 if (overlay.classList.contains('hidden')) {
+                    // Switch display block state to flex explicitly to trigger backdrop filters correctly
                     overlay.classList.remove('hidden');
+                    overlay.classList.add('flex');
                     setTimeout(() => {
                         overlay.classList.add('opacity-100', 'translate-y-0');
                         overlay.classList.remove('opacity-0', 'translate-y-[-10px]');
@@ -292,7 +294,10 @@
                 } else {
                     overlay.classList.add('opacity-0', 'translate-y-[-10px]');
                     overlay.classList.remove('opacity-100', 'translate-y-0');
-                    setTimeout(() => { overlay.classList.add('hidden'); }, 500);
+                    setTimeout(() => { 
+                        overlay.classList.remove('flex');
+                        overlay.classList.add('hidden'); 
+                    }, 500);
                     openIcon.classList.remove('hidden');
                     closeIcon.classList.add('hidden');
                     document.body.classList.remove('overflow-hidden');

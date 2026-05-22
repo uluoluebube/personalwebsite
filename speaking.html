@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking — Ulu Oluebubechukwu</title>
+    <meta name="description" content="Keynote sessions on future technology, creative autonomy, and consumer psychology by Ulu Oluebubechukwu (Mr. Ulu).">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        onyx: '#0A0A0A',
+                        studio: '#121212',
+                        accent: '#FF3C11',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0A;
+            color: #F4F4F5;
+            overflow-x: hidden;
+        }
+        .editorial-border {
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(4px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity, filter;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+
+        @keyframes heroFadeUp {
+            0% { opacity: 0; transform: translateY(30px); filter: blur(4px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        .animate-hero {
+            animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-accent selection:text-white">
+
+    <header class="fixed top-0 w-full z-50 border-b editorial-border bg-onyx/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50">
+            <a href="index.html" class="text-xs font-bold tracking-[0.3em] uppercase hover:opacity-80 transition-opacity">
+                Ulu Oluebubechukwu
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-widest uppercase text-zinc-300">
+                <a href="index.html" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">About</a>
+                <a href="index.html#ecosystem" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Ecosystem</a>
+                <a href="speaking.html" class="text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-white">Speaking</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <a href="mailto:uluoluebube@gmail.com" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500">
+                    Initiate Brief
+                </a>
+                
+                <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2 relative z-50" aria-label="Toggle Navigation Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-2xl border-b editorial-border flex-col justify-between p-8 pt-32 transition-all duration-500 opacity-0 transform translate-y-[-10px] z-40">
+            <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400">
+                <a href="index.html" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">About</a>
+                <a href="index.html#ecosystem" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Ecosystem</a>
+                <a href="speaking.html" class="text-white border-b border-zinc-800/50 pb-2">Speaking</a>
+            </nav>
+            <div class="space-y-6">
+                <a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">
+                    Initiate Brief
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto">
+        
+        <section class="border-b editorial-border pb-12 md:pb-16 mb-12 md:mb-20">
+            <div class="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-zinc-900/80 mb-4 opacity-0 animate-hero" style="animation-delay: 50ms;">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                <span class="text-[9px] font-bold tracking-widest uppercase text-zinc-300">LIVE SESSIONS</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] md:leading-[1.05] max-w-5xl opacity-0 animate-hero" style="animation-delay: 200ms;">
+                Unscripted delivery models on <span class="text-zinc-400">future tech & design psychology.</span>
+            </h1>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+            
+            <div class="lg:col-span-4 lg:sticky lg:top-28 h-fit space-y-6 md:space-y-8">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-2">Core Ethos</h2>
+                    <p class="text-sm text-zinc-200 font-light leading-relaxed">
+                        No lazy pre-recorded presentations. Every session is standard interactive execution designed to engage creative networks with real-time strategic concepts.
+                    </p>
+                </div>
+                <div class="pt-6 border-t editorial-border">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-3">Keynote Core Targets</h2>
+                    <ul class="text-xs text-zinc-200 space-y-2.5 font-light">
+                        <li>— The Convergence of Future Tech & Design</li>
+                        <li>— Accelerating Creative Autonomy via AI</li>
+                        <li>— Strategic Visual Systems Construction</li>
+                        <li>— Practical Brand Auditing Logic</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 space-y-12 md:space-y-16">
+                
+                <div class="reveal">
+                    <p class="text-lg md:text-2xl text-zinc-200 font-light leading-relaxed">
+                        With over <strong class="text-white font-medium">3 years of active public speaking engagement</strong> and a structural design background spanning more than 7 years, my keynotes are explicitly framed to break down high-end workflow mechanics for ambitious creators looking to navigate modern digital transformation.
+                    </p>
+                </div>
+
+                <div class="space-y-6 reveal">
+                    <h3 class="text-xs font-bold tracking-widest text-accent uppercase">// Lecture Frameworks</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-6 border editorial-border bg-studio/50">
+                            <span class="text-[10px] font-mono text-zinc-500 block mb-3">MODULE A</span>
+                            <h4 class="text-lg font-bold text-white mb-2">Tech and Creative Autonomy</h4>
+                            <p class="text-xs text-zinc-300 font-light leading-relaxed">
+                                Breaking down how modern artificial intelligence modeling allows solitary designers to build, test, and deploy production-grade software ecosystems without standard coding background bottlenecks.
+                            </p>
+                        </div>
+                        <div class="p-6 border editorial-border bg-studio/50">
+                            <span class="text-[10px] font-mono text-zinc-500 block mb-3">MODULE B</span>
+                            <h4 class="text-lg font-bold text-white mb-2">Strategic Brand Auditing</h4>
+                            <p class="text-xs text-zinc-300 font-light leading-relaxed">
+                                Instilling objective, metric-driven brand assessment methodologies that separate timeless enterprise identifiers from fleeting, cosmetic layout patterns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-8 border border-zinc-800 bg-studio relative overflow-hidden reveal">
+                    <div class="absolute -top-6 -right-6 p-4 opacity-[0.02] text-7xl md:text-9xl font-bold font-mono pointer-events-none select-none">NEXT</div>
+                    <span class="text-[9px] font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 px-2.5 py-1 uppercase mb-4 inline-block">LAUNCH RESERVATION PORTAL</span>
+                    <h4 class="text-xl font-bold tracking-tight text-white mb-3">Secure Priority Access to Bookings</h4>
+                    <p class="text-sm text-zinc-300 font-light leading-relaxed mb-6">
+                        The live interactive scheduling panel is spinning up for production. Submit your details below to place your agency, hub, or conference onto the high-priority calendar pipeline for immediate callback when slots materialize.
+                    </p>
+                    
+                    <form action="mailto:uluoluebube@gmail.com" method="GET" enctype="text/plain" class="space-y-4 max-w-xl">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" placeholder="ORGANIZATION NAME" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                            <input type="email" placeholder="DIRECT CONTACT EMAIL" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                        </div>
+                        <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-white text-onyx font-bold tracking-widest text-xs uppercase hover:bg-zinc-200 transition-colors">
+                            Join Booking Pipeline
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-4 reveal">
+                    <h3 class="text-xs font-bold tracking-widest text-zinc-400 uppercase">// Historic Footprints</h3>
+                    <div class="border-t border-zinc-800/80 divide-y divide-zinc-800/80">
+                        <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">X-Creative Graphic Hub Keynote</h4>
+                                <p class="text-xs text-zinc-400 font-light mt-0.5">Future Technology & The Intersection of Creative Influence</p>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">Keynote Speaker</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t editorial-border bg-onyx py-12 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left text-zinc-400 text-xs">
+            <div class="tracking-widest uppercase font-medium order-2 md:order-1">
+                &copy; 2026 Ulu Oluebubechukwu. All Rights Reserved.
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 font-semibold tracking-wider uppercase text-zinc-300 order-1 md:order-2">
+                <a href="https://linkedin.com/in/uluoluebube" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://twitter.com/uluoluebube" target="_blank" class="hover:text-white transition-colors">Twitter</a>
+                <a href="https://instagram.com/uluoluebube" target="_blank" class="hover:text-white transition-colors">Instagram</a>
+            </div>
+            <div class="font-light italic text-[11px] text-zinc-500 order-3 w-full md:w-auto md:text-right">
+                Engineered with design strategy
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOptions = { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+            reveals.forEach(element => { revealOnScroll.observe(element); });
+
+            const trigger = document.getElementById('mobile-menu-trigger');
+            const overlay = document.getElementById('mobile-navigation-overlay');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+
+            trigger.addEventListener('click', () => {
+                if (overlay.classList.contains('hidden')) {
+                    // Switch display block state to flex explicitly to trigger backdrop filters correctly
+                    overlay.classList.remove('hidden');
+                    overlay.classList.add('flex');
+                    setTimeout(() => {
+                        overlay.classList.add('opacity-100', 'translate-y-0');
+                        overlay.classList.remove('opacity-0', 'translate-y-[-10px]');
+                    }, 10);
+                    openIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden');
+                } else {
+                    overlay.classList.add('opacity-0', 'translate-y-[-10px]');
+                    overlay.classList.remove('opacity-100', 'translate-y-0');
+                    setTimeout(() => { 
+                        overlay.classList.remove('flex');
+                        overlay.classList.add('hidden'); 
+                    }, 500);
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
