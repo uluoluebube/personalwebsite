@@ -35,7 +35,6 @@
             border-color: rgba(255, 255, 255, 0.14);
         }
         
-        /* Premium Editorial Scroll Reveals */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -54,16 +53,8 @@
         .delay-200 { transition-delay: 200ms; }
 
         @keyframes heroFadeUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-                filter: blur(4px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0);
-            }
+            0% { opacity: 0; transform: translateY(30px); filter: blur(4px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
         }
         .animate-hero {
             animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -72,49 +63,70 @@
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white">
 
-    <header class="fixed top-0 w-full z-50 border-b editorial-border bg-onyx/90 backdrop-blur-md transition-all duration-500">
+    <header class="fixed top-0 w-full z-50 border-b editorial-border bg-onyx/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50">
             <a href="index.html" class="text-xs font-bold tracking-[0.3em] uppercase hover:opacity-80 transition-opacity">
                 Ulu Oluebubechukwu
             </a>
+            
             <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-widest uppercase text-zinc-300">
                 <a href="index.html" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Home</a>
                 <a href="about.html" class="text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-white">About</a>
                 <a href="index.html#ecosystem" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Ecosystem</a>
                 <span class="text-zinc-500 cursor-not-allowed flex items-center gap-1">Speaking <span class="text-[9px] tracking-normal text-zinc-600 font-light lowercase italic">(soon)</span></span>
             </nav>
-            <div>
-                <a href="mailto:uluoluebube@gmail.com" class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500 rounded-none">
+            
+            <div class="flex items-center gap-4">
+                <a href="mailto:uluoluebube@gmail.com" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500">
+                    Initiate Brief
+                </a>
+                
+                <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2 relative z-50" aria-label="Toggle Navigation Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 bg-onyx z-40 flex flex-col justify-between p-8 pt-32 transition-all duration-500 opacity-0 transform translate-y-[-10px]">
+            <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400">
+                <a href="index.html" class="hover:text-white border-b border-zinc-800 pb-2 transition-colors">Home</a>
+                <a href="about.html" class="text-white border-b border-zinc-800 pb-2">About</a>
+                <a href="index.html#ecosystem" class="hover:text-white border-b border-zinc-800 pb-2 transition-colors">Ecosystem</a>
+                <span class="text-zinc-600 cursor-not-allowed text-sm flex items-center gap-1 italic lowercase">Speaking Menu (soon)</span>
+            </nav>
+            <div class="space-y-6">
+                <a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">
                     Initiate Brief
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="pt-36 pb-24 px-6 max-w-7xl mx-auto">
+    <main class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto">
         
-        <section class="border-b editorial-border pb-16 mb-20">
+        <section class="border-b editorial-border pb-12 md:pb-16 mb-12 md:mb-20">
             <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-4 opacity-0 animate-hero" style="animation-delay: 100ms;">// THE NARRATIVE</span>
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.05] max-w-5xl opacity-0 animate-hero" style="animation-delay: 300ms;">
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] md:leading-[1.05] max-w-5xl opacity-0 animate-hero" style="animation-delay: 300ms;">
                 Dismantling complexity, and building with absolute <span class="text-zinc-400">functional logic.</span>
             </h1>
         </section>
 
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             
-            <div class="lg:col-span-4 lg:sticky lg:top-28 h-fit space-y-8">
+            <div class="lg:col-span-4 lg:sticky lg:top-28 h-fit space-y-6 md:space-y-8">
                 <div>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-2">Core Operator</h2>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-2">Identity</h2>
                     <p class="text-sm text-zinc-100 font-semibold">Ulu Oluebubechukwu</p>
-                    <p class="text-xs text-zinc-400 font-light italic mt-0.5">Known Professionally as Mr. Ulu</p>
+                    <p class="text-xs text-zinc-400 font-light italic mt-0.5">Mr. Ulu</p>
                 </div>
                 <div class="pt-6 border-t editorial-border">
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-2">Primary Station</h2>
-                    <p class="text-sm text-zinc-200 font-light">Benin City, Nigeria</p>
-                </div>
-                <div class="pt-6 border-t editorial-border">
-                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-2">Execution Vectors</h2>
-                    <ul class="text-xs text-zinc-200 space-y-1.5 font-light">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-3">How I Live for Creativity</h2>
+                    <ul class="text-xs text-zinc-200 space-y-2.5 font-light">
                         <li>— Identity System Architecture</li>
                         <li>— Programmatic Micro-Utility Engineering</li>
                         <li>— Human Interaction Psychology</li>
@@ -123,33 +135,33 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-8 space-y-16">
+            <div class="lg:col-span-8 space-y-12 md:space-y-16">
                 
                 <div class="reveal">
-                    <p class="text-xl md:text-2xl text-zinc-200 font-light leading-relaxed">
+                    <p class="text-lg md:text-2xl text-zinc-200 font-light leading-relaxed">
                         I build platforms, engines, and clean systems. As a strategist, multidisciplinary designer, and deliberate non-code builder, I focus entirely on bridging the space between high-end visual semantics and structural code through natural-language code construction—frequently called <strong class="text-white font-medium">"Vibe Coding."</strong>
                     </p>
                 </div>
 
-                <div class="space-y-6 reveal">
+                <div class="space-y-4 md:space-y-6 reveal">
                     <h3 class="text-xs font-bold tracking-widest text-accent uppercase">// Personal Foundation</h3>
-                    <h4 class="text-xl md:text-2xl font-bold tracking-tight text-white">Grounded by Family, Driven by Longevity</h4>
+                    <h4 class="text-lg md:text-2xl font-bold tracking-tight text-white">Grounded by Family, Driven by Longevity</h4>
                     <p class="text-zinc-200 font-light text-sm leading-relaxed">
                         Beyond the software layouts and production design metrics, my primary execution environment is anchored as a <strong class="text-zinc-100 font-semibold">husband and a father</strong>. This foundation fundamentally alters how I approach project lifecycles. It completely eliminates the desire to build trendy, superficial vanity projects. Instead, it forces an unwavering commitment to structural clarity, baseline resilience, and tools that solve immediate human friction points.
                     </p>
                 </div>
 
-                <div class="space-y-6 reveal delay-100">
+                <div class="space-y-4 md:space-y-6 reveal delay-100">
                     <h3 class="text-xs font-bold tracking-widest text-accent uppercase">// Strategic Parameters & Goals</h3>
-                    <h4 class="text-xl md:text-2xl font-bold tracking-tight text-white">Dismantling Technical Gatekeeping</h4>
+                    <h4 class="text-lg md:text-2xl font-bold tracking-tight text-white">Dismantling Technical Gatekeeping</h4>
                     <p class="text-zinc-200 font-light text-sm leading-relaxed">
                         My absolute directive is to prove that premium digital application deployment is no longer gated by decades of conventional software syntax parameters. By leveraging modern automation modules alongside elite identity principles, I aim to show upcoming technical and creative communities how to build software with zero engineering friction.
                     </p>
                 </div>
 
-                <div class="p-8 border editorial-border bg-studio/80 relative overflow-hidden reveal">
-                    <div class="absolute -top-6 -right-6 p-4 opacity-[0.03] text-9xl font-bold font-mono pointer-events-none select-none">AUDIO</div>
-                    <span class="text-[9px] font-bold tracking-widest text-amber-300 bg-amber-950/60 border border-amber-800/60 px-2 py-0.5 uppercase mb-6 inline-block">THE PODCAST OUTLET</span>
+                <div class="p-6 md:p-8 border border-zinc-800 bg-studio/80 relative overflow-hidden reveal">
+                    <div class="absolute -top-6 -right-6 p-4 opacity-[0.02] text-7xl md:text-9xl font-bold font-mono pointer-events-none select-none">AUDIO</div>
+                    <span class="text-[9px] font-bold tracking-widest text-amber-300 bg-amber-950/60 border border-amber-800/60 px-2 py-0.5 uppercase mb-4 md:mb-6 inline-block">THE PODCAST OUTLET</span>
                     <h4 class="text-xl font-bold tracking-tight text-white mb-3">Monolog with Ulu</h4>
                     <p class="text-sm text-zinc-200 font-light leading-relaxed">
                         <strong class="text-zinc-100 font-medium">Monolog with Ulu</strong> functions as a transparent, solo acoustic blueprint for the modern creative. It cuts out standard, safe agency jargon to document the absolute reality of operating an active multi-disciplinary ecosystem. From the mental mechanics of brand strategy and the real-time execution parameters of vibe coding to raw client management, this show serves as a direct, unedited data stream for builders who care about true execution over abstract theory.
@@ -160,14 +172,14 @@
                     <h3 class="text-xs font-bold tracking-widest text-accent uppercase">// Institutional Impact & Achievements</h3>
                     
                     <div class="space-y-2">
-                        <h4 class="text-xl md:text-2xl font-bold tracking-tight text-white">Production Ecosystem Footprint</h4>
-                        <p class="text-zinc-200 font-light text-sm leading-relaxed">
+                        <h4 class="text-lg md:text-2xl font-bold tracking-tight text-white">Production Ecosystem Footprint</h4>
+                        <p class="text-zinc-200 font-light text-sm leading-relaxed text-justify sm:text-left">
                             Successfully architected, configured, and deployed functional production platforms, including BrandingOff (an all-in-one workspace and design tool designed to eliminate the tedious, repetitive, and time-consuming tasks associated with client projects, allowing brand designers to focus on creative work), TickOff (a robust productivity suite designed for busy individuals like creatives, students, and professionals, TickOff helps users manage tasks, build focus, and consistency through a variety of smart productivity tools), and WetinRemain (a web-based tax calculator designed to help Nigerian professionals accurately calculate their take-home pay, tax deductions, pension, and rent relief based on the current Nigerian tax regulations), all processing active global consumer tasks.
                         </p>
                     </div>
 
                     <div class="space-y-2 pt-4">
-                        <h4 class="text-xl md:text-2xl font-bold tracking-tight text-white">Educational Autonomy Architecture</h4>
+                        <h4 class="text-lg md:text-2xl font-bold tracking-tight text-white">Educational Autonomy Architecture</h4>
                         <p class="text-zinc-200 font-light text-sm leading-relaxed">
                             Constructed a dynamic educational network that simplifies design training, providing straightforward, actionable knowledge directly to thousands of emerging digital creators across international boundaries through Vixe Creative Academy.
                         </p>
@@ -233,16 +245,16 @@
     </section>
 
     <footer class="border-t editorial-border bg-onyx py-12 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-400 text-xs">
-            <div class="tracking-widest uppercase font-medium">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left text-zinc-400 text-xs">
+            <div class="tracking-widest uppercase font-medium order-2 md:order-1">
                 &copy; 2026 Ulu Oluebubechukwu. All Rights Reserved.
             </div>
-            <div class="flex gap-6 font-semibold tracking-wider uppercase text-zinc-300">
+            <div class="flex flex-wrap justify-center gap-6 font-semibold tracking-wider uppercase text-zinc-300 order-1 md:order-2">
                 <a href="https://linkedin.com/in/uluoluebube" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
                 <a href="https://twitter.com/uluoluebube" target="_blank" class="hover:text-white transition-colors">Twitter</a>
                 <a href="https://instagram.com/uluoluebube" target="_blank" class="hover:text-white transition-colors">Instagram</a>
             </div>
-            <div class="font-light italic text-[11px] text-zinc-500">
+            <div class="font-light italic text-[11px] text-zinc-500 order-3 w-full md:w-auto md:text-right">
                 Engineered with design strategy
             </div>
         </div>
@@ -261,6 +273,31 @@
                 });
             }, revealOptions);
             reveals.forEach(element => { revealOnScroll.observe(element); });
+
+            const trigger = document.getElementById('mobile-menu-trigger');
+            const overlay = document.getElementById('mobile-navigation-overlay');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+
+            trigger.addEventListener('click', () => {
+                if (overlay.classList.contains('hidden')) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.add('opacity-100', 'translate-y-0');
+                        overlay.classList.remove('opacity-0', 'translate-y-[-10px]');
+                    }, 10);
+                    openIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden');
+                } else {
+                    overlay.classList.add('opacity-0', 'translate-y-[-10px]');
+                    overlay.classList.remove('opacity-100', 'translate-y-0');
+                    setTimeout(() => { overlay.classList.add('hidden'); }, 500);
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }
+            });
         });
     </script>
 </body>
