@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ulu Oluebubechukwu — Multidisciplinary Brand Designer & Strategist</title>
-    <meta name="description" content="Official portfolio of Ulu Oluebubechukwu (Mr. Ulu). Founder of Outvixe Creative Agency, and non-code builder bridging visual aesthetics and functional logic.">
+    <title>Ulu Oluebubechukwu — Brand Designer, Strategist & Creator</title>
+    <meta name="description" content="Official portfolio of Ulu Oluebubechukwu (Mr. Ulu). Founder of Outvixe Creative Agency, design mentor, and builder crafting honest visual systems and useful digital tools.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,103 +13,27 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        onyx: '#0A0A0A',
-                        studio: '#121212',
-                        accent: '#FF3C11',
-                    }
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: { onyx: '#0A0A0A', studio: '#121212', accent: '#FF3C11' }
                 }
             }
         }
     </script>
     <style>
-        body {
-            background-color: #0A0A0A;
-            color: #F4F4F5;
-            overflow-x: hidden;
-        }
-        .editorial-border {
-            border-color: rgba(255, 255, 255, 0.14);
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            filter: blur(4px);
-            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity, filter;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0);
-        }
-
+        body { background-color: #0A0A0A; color: #F4F4F5; overflow-x: hidden; }
+        .editorial-border { border-color: rgba(255, 255, 255, 0.14); }
+        .reveal { opacity: 0; transform: translateY(40px); filter: blur(4px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity, filter; }
+        .reveal.active { opacity: 1; transform: translateY(0); filter: blur(0); }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
-
-        @keyframes heroFadeUp {
-            0% { opacity: 0; transform: translateY(30px); filter: blur(4px); }
-            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-        }
-        .animate-hero {
-            animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-
-        /* Mobile hamburger menu: Apple-inspired liquid/frosted glass panel */
-        #mobile-navigation-overlay.mobile-glass-menu {
-            background:
-                radial-gradient(circle at 20% 0%, rgba(255, 60, 17, 0.18), transparent 34%),
-                linear-gradient(135deg, rgba(10, 10, 10, 0.88), rgba(18, 18, 18, 0.76));
-            -webkit-backdrop-filter: blur(28px) saturate(165%);
-            backdrop-filter: blur(28px) saturate(165%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 30px 90px rgba(0, 0, 0, 0.72);
-            overflow-y: auto;
-            isolation: isolate;
-        }
-
-        #mobile-navigation-overlay.mobile-glass-menu::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-            background:
-                linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%),
-                radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.10), transparent 30%),
-                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-            background-size: auto, auto, 100% 48px;
-            opacity: 0.55;
-        }
-
-        #mobile-navigation-overlay.mobile-glass-menu nav a {
-            text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45);
-        }
-
-        @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-            #mobile-navigation-overlay.mobile-glass-menu {
-                background: rgba(10, 10, 10, 0.97);
-            }
-        }
-
-        @media (min-width: 768px) {
-            #mobile-navigation-overlay {
-                display: none !important;
-            }
-        }
-
+        @keyframes heroFadeUp { 0% { opacity: 0; transform: translateY(30px); filter: blur(4px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0); } }
+        .animate-hero { animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white">
 
-    <header class="fixed top-0 w-full z-50 border-b editorial-border bg-onyx/90 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50">
+    <header class="fixed top-0 w-full border-b editorial-border bg-[#0A0A0A] md:bg-onyx/90 md:backdrop-blur-md" style="z-index: 9999 !important;">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative" style="z-index: 10001 !important;">
             <a href="index.html" class="text-xs font-bold tracking-[0.3em] uppercase hover:opacity-80 transition-opacity">
                 Ulu Oluebubechukwu
             </a>
@@ -123,88 +47,94 @@
             
             <div class="flex items-center gap-4">
                 <a href="mailto:uluoluebube@gmail.com" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500">
-                    Initiate Brief
+                    Get In Touch
                 </a>
                 
-                <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2 relative z-50" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-navigation-overlay">
-                    <svg id="menu-icon-open" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2" aria-label="Toggle Navigation Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="square" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
-                    <svg id="menu-icon-close" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="square" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 w-full h-[100dvh]  flex-col justify-between p-8 pt-28 pb-12 z-40 mobile-glass-menu">
+        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 w-full h-[100dvh] flex-col justify-between p-8 pt-28 pb-12" style="background-color: #0A0A0A !important; z-index: 10000 !important;">
             <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400 mt-4">
-                <a href="index.html" class="text-white border-b border-zinc-800/40 pb-2">Home</a>
-                <a href="about.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">About</a>
-                <a href="#ecosystem" id="mobile-eco-link" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Ecosystem</a>
-                <a href="speaking.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Speaking</a>
+                <a href="index.html" class="text-white border-b border-zinc-800/60 pb-2">Home</a>
+                <a href="about.html" class="hover:text-white border-b border-zinc-800/60 pb-2 transition-colors">About</a>
+                <a href="#ecosystem" id="mobile-eco-link" class="hover:text-white border-b border-zinc-800/60 pb-2 transition-colors">Ecosystem</a>
+                <a href="speaking.html" class="hover:text-white border-b border-zinc-800/60 pb-2 transition-colors">Speaking</a>
             </nav>
             <div class="space-y-6">
-                <a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent hover:bg-white hover:text-onyx transition-all duration-300">
-                    Initiate Brief
+                <a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">
+                    Get In Touch
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-36 px-6 max-w-7xl mx-auto border-b editorial-border min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
-        <img src="assets/hero-bg.jpg" alt="Ulu Oluebubechukwu" class="absolute inset-0 w-full h-full object-cover object-center md:object-right opacity-30 md:opacity-50 pointer-events-none z-0">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,60,17,0.15),transparent_60%)] z-1 pointer-events-none"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent md:hidden z-1"></div>
+    <section id="hero" class="relative pt-32 pb-16 md:pt-44 md:pb-28 px-6 max-w-7xl mx-auto border-b editorial-border min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,60,17,0.12),transparent_60%)] pointer-events-none"></div>
         
-        <div class="relative z-10 max-w-5xl w-full">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-accent/30 bg-zinc-900/80 mb-6 md:mb-8 rounded-full opacity-0 animate-hero" style="animation-delay: 100ms;">
-                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                <span class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-zinc-200">LIVING FOR CREATIVITY</span>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10">
+            <div class="lg:col-span-7 max-w-3xl w-full">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-accent/30 bg-zinc-900/80 mb-6 rounded-full opacity-0 animate-hero" style="animation-delay: 100ms;">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    <span class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-zinc-200">DESIGN & STRATEGY FOR REAL BUSINESSES</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] md:leading-[1.0] mb-6 opacity-0 animate-hero" style="animation-delay: 300ms;">
+                    Designing honest <br class="hidden sm:inline">identities and building <br class="hidden lg:inline"><span class="text-zinc-400">clean, useful tools.</span>
+                </h1>
+                
+                <p class="text-base md:text-xl text-zinc-300 font-light max-w-2xl leading-relaxed mb-8 md:mb-10 opacity-0 animate-hero" style="animation-delay: 500ms;">
+                    I am a brand designer, strategist, and creator. I spend my time crafting clear visual systems for businesses and building practical digital solutions that respect your time and make daily operations straightforward.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-hero" style="animation-delay: 700ms;">
+                    <a href="#ecosystem" class="px-8 py-4 text-center text-xs font-semibold tracking-widest uppercase bg-white text-onyx hover:bg-zinc-200 transition-colors shadow-lg">
+                        View Ecosystem
+                    </a>
+                    <a href="about.html" class="px-8 py-4 text-center text-xs font-semibold tracking-widest uppercase border editorial-border text-white hover:bg-white/5 transition-colors">
+                        Read My Story
+                    </a>
+                </div>
             </div>
-            
-            <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.0] md:leading-[0.95] mb-6 md:mb-8 opacity-0 animate-hero" style="animation-delay: 300ms;">
-                Redefining brand <br class="hidden sm:inline">experiences for <br class="hidden lg:inline"><span class="text-zinc-400">global impact.</span>
-            </h1>
-            
-            <p class="text-base md:text-2xl text-zinc-200 font-light max-w-3xl leading-relaxed mb-10 md:mb-12 opacity-0 animate-hero" style="animation-delay: 500ms;">
-                Strategist, Multidisciplinary Designer, and non-code builder. Bridging the gap between high-end visual aesthetics and functional logic through vibe coding.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-hero" style="animation-delay: 700ms;">
-                <a href="#ecosystem" class="px-8 py-4 text-center text-xs font-semibold tracking-widest uppercase bg-white text-onyx hover:bg-zinc-200 transition-colors shadow-lg">
-                    Explore Ecosystem
-                </a>
-                <a href="about.html" class="px-8 py-4 text-center text-xs font-semibold tracking-widest uppercase border editorial-border text-white hover:bg-white/5 transition-colors">
-                    The Narrative
-                </a>
+
+            <div class="lg:col-span-5 flex justify-center w-full opacity-0 animate-hero" style="animation-delay: 600ms;">
+                <div class="relative w-full max-w-sm lg:max-w-md aspect-[4/5] overflow-hidden border editorial-border bg-zinc-900">
+                    <img src="1325963.jpg" alt="Ulu Oluebubechukwu" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+                </div>
             </div>
         </div>
     </section>
 
     <section id="about" class="grid grid-cols-1 lg:grid-cols-3 border-b editorial-border max-w-7xl mx-auto divide-y lg:divide-y-0 lg:divide-x editorial-border relative z-10">
         <div class="p-6 md:p-12 flex flex-col justify-between reveal">
-            <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 mb-6 lg:mb-8">01 / PHILOSOPHY</span>
-            <p class="text-sm text-zinc-200 leading-relaxed font-light">
-                Design without strategy is just decorative noise. I architect thoughtful, timeless brand structures meant to capture long-term baseline recognition rather than fleeting aesthetic trends.
+            <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 mb-6">WHAT I BELIEVE</span>
+            <p class="text-sm text-zinc-300 leading-relaxed font-light">
+                Design isn't decoration. If it doesn't clearly communicate who you are and solve a business bottleneck, it's just noise. I build identity systems meant to wear in, not out.
             </p>
         </div>
         <div class="p-6 md:p-12 flex flex-col justify-between reveal delay-100">
-            <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 mb-6 lg:mb-8">02 / CORE CAPACITY</span>
-            <p class="text-sm text-zinc-200 leading-relaxed font-light">
-                Operating at the hyper-intersection of visual communication, human psychology, and modern workflow automation ("Vibe Coding") to spin out robust digital products with functional and practical finishes.
+            <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 mb-6">WHAT I DO</span>
+            <p class="text-sm text-zinc-300 leading-relaxed font-light">
+                I direct design direction at Outvixe, share honest insights on my podcast, and use visual software platforms to build workflows that take the robotic, repetitive tasks off your plate.
             </p>
         </div>
         <div class="p-6 md:p-12 flex flex-col justify-between reveal delay-200">
-            <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 mb-6 lg:mb-8">03 / METRIC RANGE</span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 mb-6">THE NUMBERS</span>
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <div class="text-2xl md:text-3xl font-bold text-white tracking-tight">7+ Yrs</div>
-                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mt-1 font-medium">Design Experience</div>
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mt-1 font-medium">In Active Design</div>
                 </div>
                 <div>
                     <div class="text-2xl md:text-3xl font-bold text-white tracking-tight">Active</div>
-                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mt-1 font-medium">Global Users</div>
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mt-1 font-medium">Digital Tools</div>
                 </div>
             </div>
         </div>
@@ -213,11 +143,11 @@
     <section id="pillars" class="py-16 md:py-24 px-6 max-w-7xl mx-auto border-b editorial-border relative z-10">
         <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 md:mb-16 gap-4 reveal">
             <div>
-                <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-3">OPERATING PARADIGM</span>
-                <h2 class="text-2xl md:text-5xl font-bold tracking-tight text-white">The Four Pillars of Focus</h2>
+                <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-3">HOW I WORK</span>
+                <h2 class="text-2xl md:text-5xl font-bold tracking-tight text-white">Four Areas of Focus</h2>
             </div>
-            <p class="text-zinc-200 font-light max-w-md text-sm leading-relaxed">
-                A modern framework designed to create brand architectures, accelerate creative education, and build clean interactive tooling.
+            <p class="text-zinc-300 font-light max-w-md text-sm leading-relaxed">
+                A simple framework dedicated to creating honest brand systems, guiding design students, and deploying useful everyday interfaces.
             </p>
         </div>
 
@@ -225,40 +155,40 @@
             <div class="bg-onyx p-6 md:p-12 hover:bg-zinc-900/40 transition-all duration-300 group relative">
                 <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="relative z-10">
-                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 md:mb-8 group-hover:border-white group-hover:text-white transition-colors duration-300">01</div>
-                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">The Brand Designer</h3>
-                    <p class="text-zinc-300 font-light text-sm leading-relaxed">
-                        Directing <strong class="text-white font-medium">Outvixe Creative Agency</strong>. Designing thoughtful, functional, and completely timeless brand identifiers that bridge the gap between audience perception and market reality.
+                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 group-hover:border-white group-hover:text-white transition-colors duration-300">01</div>
+                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">Brand Designer</h3>
+                    <p class="text-zinc-400 font-light text-sm leading-relaxed">
+                        Leading <strong>Outvixe Creative Agency</strong>. We shape clean, intentional visual identities that help companies gain immediate ground and stand solidly behind their services.
                     </p>
                 </div>
             </div>
             <div class="bg-onyx p-6 md:p-12 hover:bg-zinc-900/40 transition-all duration-300 group relative">
                 <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="relative z-10">
-                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 md:mb-8 group-hover:border-white group-hover:text-white transition-colors duration-300">02</div>
-                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">The Product Builder</h3>
-                    <p class="text-zinc-300 font-light text-sm leading-relaxed">
-                        Leveraging advanced natural language modeling ("Vibe Coding") to design and engineer lean digital tools that break down complex tax mechanisms, task organization, and design operations.
+                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 group-hover:border-white group-hover:text-white transition-colors duration-300">02</div>
+                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">Product Builder</h3>
+                    <p class="text-zinc-400 font-light text-sm leading-relaxed">
+                        Building layout modules and lightweight digital tools designed to remove daily operational bottlenecks, calculate messy local rules, and handle task assignment.
                     </p>
                 </div>
             </div>
             <div class="bg-onyx p-6 md:p-12 hover:bg-zinc-900/40 transition-all duration-300 group relative">
                 <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="relative z-10">
-                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 md:mb-8 group-hover:border-white group-hover:text-white transition-colors duration-300">03</div>
-                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">The Design Educator</h3>
-                    <p class="text-zinc-300 font-light text-sm leading-relaxed">
-                        Curating specialized knowledge at <strong class="text-white font-medium">Vixe Creative Academy</strong>. Dedicated to stripping away stuffy technical gatekeeping and making advanced design mechanics fundamentally less boring.
+                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 group-hover:border-white group-hover:text-white transition-colors duration-300">03</div>
+                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">Design Educator</h3>
+                    <p class="text-zinc-400 font-light text-sm leading-relaxed">
+                        Mentoring students at <strong>Vixe Creative Academy</strong>. I focus on breaking down advanced identity mechanics and practical layout logic without the dense, boring academic pretense.
                     </p>
                 </div>
             </div>
             <div class="bg-onyx p-6 md:p-12 hover:bg-zinc-900/40 transition-all duration-300 group relative">
                 <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="relative z-10">
-                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 md:mb-8 group-hover:border-white group-hover:text-white transition-colors duration-300">04</div>
-                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">The Public Speaker</h3>
-                    <p class="text-zinc-300 font-light text-sm leading-relaxed">
-                        Delivering high-impact keynote sessions on future technology frameworks, creative autonomy parameters, and consumer brand psychology.
+                    <div class="w-10 h-10 border editorial-border flex items-center justify-center text-xs font-semibold text-zinc-300 mb-6 group-hover:border-white group-hover:text-white transition-colors duration-300">04</div>
+                    <h3 class="text-xl font-semibold text-white tracking-tight mb-3">Keynote Speaker</h3>
+                    <p class="text-zinc-400 font-light text-sm leading-relaxed">
+                        Sharing real lessons on layout strategy, creative freedom, and the honest reality of building digital platforms in front of tech and creative communities.
                     </p>
                 </div>
             </div>
@@ -267,84 +197,83 @@
 
     <section id="ecosystem" class="py-16 md:py-24 px-6 max-w-7xl mx-auto border-b editorial-border relative z-10">
         <div class="mb-12 md:mb-16 reveal">
-            <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-3">PRODUCT ENGINE & LABS</span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-3">WHAT I BUILD</span>
             <h2 class="text-2xl md:text-5xl font-bold tracking-tight text-white">The Active Ecosystem</h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            
             <a href="https://outvixe.framer.website/" target="_blank" class="block border editorial-border bg-studio p-6 md:p-8 flex flex-col justify-between group hover:border-indigo-500 hover:-translate-y-1 transition-all duration-500 reveal">
                 <div>
-                    <div class="flex justify-between items-start mb-8 md:mb-12">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-300 uppercase">Agency Core</span>
+                    <div class="flex justify-between items-start mb-8">
+                        <span class="text-[10px] font-bold tracking-widest text-zinc-400 uppercase">Agency Core</span>
                         <span class="text-xs font-semibold text-indigo-400 flex items-center gap-1.5 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/30">
-                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span> Operational
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span> Active
                         </span>
                     </div>
                     <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight mb-3 group-hover:text-indigo-400 transition-colors duration-300">Outvixe Creative Agency</h3>
-                    <p class="text-zinc-200 text-sm font-light leading-relaxed max-w-md">
-                        An independent, multi-disciplinary agency granting distinct visual voice to companies and global enterprises looking to establish instant credibility.
+                    <p class="text-zinc-300 text-sm font-light leading-relaxed">
+                        This is my home base. Outvixe is a brand and visual design agency where we partner with businesses across hospitality, healthcare, fashion, and beyond. We don't just sketch logos; we build honest, deeply thought-out visual systems that bridge the gap between a client's dream and what their audience actually feels when they interact with them.
                     </p>
                 </div>
-                <div class="mt-8 md:mt-12 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-indigo-500/20 transition-colors">
-                    <span class="text-xs font-medium text-zinc-400">Brand Systems & Experience Design</span>
+                <div class="mt-8 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-indigo-500/20 transition-colors">
+                    <span class="text-xs font-medium text-zinc-400">Brand Systems & Visual Direction</span>
                     <span class="text-xs text-zinc-200 group-hover:text-indigo-400 group-hover:translate-x-2 transition-all duration-300">→</span>
                 </div>
             </a>
 
             <a href="https://brandingoff.netlify.app/" target="_blank" class="block border editorial-border bg-studio p-6 md:p-8 flex flex-col justify-between group hover:border-orange-500 hover:-translate-y-1 transition-all duration-500 reveal delay-100">
                 <div>
-                    <div class="flex justify-between items-start mb-8 md:mb-12">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-300 uppercase">SaaS Suite</span>
+                    <div class="flex justify-between items-start mb-8">
+                        <span class="text-[10px] font-bold tracking-widest text-zinc-400 uppercase">Designer Tooling</span>
                         <span class="text-xs font-semibold text-orange-400 flex items-center gap-1.5 bg-orange-500/10 px-2.5 py-1 rounded-full border border-orange-500/30">
-                            <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span> Live Production
+                            <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span> Production
                         </span>
                     </div>
                     <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight mb-3 group-hover:text-orange-400 transition-colors duration-300">BrandingOff</h3>
-                    <p class="text-zinc-200 text-sm font-light leading-relaxed max-w-md">
-                        A specialized productivity suite and programmatic asset exporter designed exclusively to optimize workflow logistics for professional identity designers and strategists.
+                    <p class="text-zinc-300 text-sm font-light leading-relaxed">
+                        Born out of pure workflow frustration. As brand designers, we spend hours on repetitive, exhausting tasks like formatting endless brand guidelines and manually exporting assets. BrandingOff is an all-in-one productivity and presentation workspace built specifically to automate those robotic design operations, giving creatives their time back so they can focus on strategy and deep thinking.
                     </p>
                 </div>
-                <div class="mt-8 md:mt-12 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-orange-500/20 transition-colors">
-                    <span class="text-xs font-medium text-zinc-400">Design Ops / Active Users</span>
+                <div class="mt-8 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-orange-500/20 transition-colors">
+                    <span class="text-xs font-medium text-zinc-400">Design Operations Workspace</span>
                     <span class="text-xs text-zinc-200 group-hover:text-orange-400 group-hover:translate-x-2 transition-all duration-300">→</span>
                 </div>
             </a>
 
             <a href="https://tickoff-app.netlify.app/" target="_blank" class="block border editorial-border bg-studio p-6 md:p-8 flex flex-col justify-between group hover:border-purple-500 hover:-translate-y-1 transition-all duration-500 reveal">
                 <div>
-                    <div class="flex justify-between items-start mb-8 md:mb-12">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-300 uppercase">Utility Interface</span>
+                    <div class="flex justify-between items-start mb-8">
+                        <span class="text-[10px] font-bold tracking-widest text-zinc-400 uppercase">Focus Interface</span>
                         <span class="text-xs font-semibold text-purple-400 flex items-center gap-1.5 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-500/30">
-                            <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span> Live Production
+                            <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span> Production
                         </span>
                     </div>
                     <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight mb-3 group-hover:text-purple-400 transition-colors duration-300">TickOff</h3>
-                    <p class="text-zinc-200 text-sm font-light leading-relaxed max-w-md">
-                        A highly customized, aesthetic task-tracking matrix designed around premium editorial visual states and clean seasonal color theory variants.
+                    <p class="text-zinc-300 text-sm font-light leading-relaxed">
+                        A visual productivity and task management app built to help creatives manage the beautiful chaos of their daily lives and design projects. Instead of a cold, rigid checklist, TickOff uses a clean layout, tactile 3D elements, and custom seasonal themes to help you structure your day, maintain your creative focus, and protect your mental peace.
                     </p>
                 </div>
-                <div class="mt-8 md:mt-12 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-purple-500/20 transition-colors">
-                    <span class="text-xs font-medium text-zinc-400">Task Orchestration / Active Users</span>
+                <div class="mt-8 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-purple-500/20 transition-colors">
+                    <span class="text-xs font-medium text-zinc-400">Task Management & Creative Focus</span>
                     <span class="text-xs text-zinc-200 group-hover:text-purple-400 group-hover:translate-x-2 transition-all duration-300">→</span>
                 </div>
             </a>
 
             <a href="https://wetinremain.netlify.app/" target="_blank" class="block border editorial-border bg-studio p-6 md:p-8 flex flex-col justify-between group hover:border-emerald-500 hover:-translate-y-1 transition-all duration-500 reveal delay-100">
                 <div>
-                    <div class="flex justify-between items-start mb-8 md:mb-12">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-300 uppercase">FinTech Engine</span>
+                    <div class="flex justify-between items-start mb-8">
+                        <span class="text-[10px] font-bold tracking-widest text-zinc-400 uppercase">Local Utility</span>
                         <span class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/30">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live Production
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Production
                         </span>
                     </div>
                     <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight mb-3 group-hover:text-emerald-400 transition-colors duration-300">WetinRemain</h3>
-                    <p class="text-zinc-200 text-sm font-light leading-relaxed max-w-md">
-                        A clean, rapid tax calculation application tailored perfectly for tracking real earner net-takeout metrics under contemporary Nigerian fiscal frameworks.
+                    <p class="text-zinc-300 text-sm font-light leading-relaxed">
+                        When the 2026 tax reforms hit Nigeria, the sheer volume of confusing financial jargon left everyday professionals and creatives anxious. I built WetinRemain to make tax calculation completely simple and transparent. It's a straightforward web application that breaks down the math, applies your reliefs, and shows you exactly what your take-home pay is—revealing exactly what is left for you to chop.
                     </p>
                 </div>
-                <div class="mt-8 md:mt-12 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-emerald-500/20 transition-colors">
-                    <span class="text-xs font-medium text-zinc-400">Fiscal Computation / Active Users</span>
+                <div class="mt-8 pt-6 border-t editorial-border flex justify-between items-center group-hover:border-emerald-500/20 transition-colors">
+                    <span class="text-xs font-medium text-zinc-400">Fiscal Breakdown & Salary Calculation</span>
                     <span class="text-xs text-zinc-200 group-hover:text-emerald-400 group-hover:translate-x-2 transition-all duration-300">→</span>
                 </div>
             </a>
@@ -353,13 +282,13 @@
 
     <section id="contact" class="py-24 px-6 max-w-7xl mx-auto text-center relative reveal z-10">
         <div class="max-w-3xl mx-auto relative z-10">
-            <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-4">COLLABORATION PORTAL</span>
-            <h2 class="text-3xl md:text-6xl font-bold tracking-tight text-white mb-6">Let's build with intent.</h2>
-            <p class="text-zinc-200 font-light leading-relaxed mb-10 max-w-xl mx-auto text-sm md:text-base">
-                Whether you need to position an enterprise identity cleanly or book a live technical framework session, let's create something functional.
+            <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-4">LET'S CONNECT</span>
+            <h2 class="text-3xl md:text-6xl font-bold tracking-tight text-white mb-6">Let's build with clear intent.</h2>
+            <p class="text-zinc-300 font-light leading-relaxed mb-10 max-w-xl mx-auto text-sm md:text-base">
+                Whether you need a grounded visual identity system for your business or want to book an honest speaking session for your community, my doors are open.
             </p>
             <a href="mailto:uluoluebube@gmail.com" class="inline-block px-10 py-5 bg-white text-onyx font-bold tracking-widest text-xs uppercase hover:bg-zinc-200 transition-all duration-300 hover:scale-[1.02]">
-                Initiate Direct Line
+                Send a Message
             </a>
         </div>
     </section>
@@ -375,7 +304,7 @@
                 <a href="https://instagram.com/uluoluebube" target="_blank" class="hover:text-white transition-colors">Instagram</a>
             </div>
             <div class="font-light italic text-[11px] text-zinc-500 order-3 w-full md:w-auto md:text-right">
-                Engineered with design strategy
+                Grounded brand strategy & tools.
             </div>
         </div>
     </footer>
@@ -406,26 +335,26 @@
                     overlay.classList.add('flex');
                     openIcon.classList.add('hidden');
                     closeIcon.classList.remove('hidden');
-                    trigger.setAttribute('aria-expanded', 'true');
                     document.body.classList.add('overflow-hidden');
                 } else {
                     overlay.classList.add('hidden');
                     overlay.classList.remove('flex');
                     openIcon.classList.remove('hidden');
                     closeIcon.classList.add('hidden');
-                    trigger.setAttribute('aria-expanded', 'false');
                     document.body.classList.remove('overflow-hidden');
                 }
             }
 
-            trigger.addEventListener('click', toggleMenu);
-            ecoLink.addEventListener('click', () => {
-                overlay.classList.add('hidden');
-                overlay.classList.remove('flex');
-                openIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
-            });
+            if (trigger && overlay) { trigger.addEventListener('click', toggleMenu); }
+            if (ecoLink) {
+                ecoLink.addEventListener('click', () => {
+                    overlay.classList.add('hidden');
+                    overlay.classList.remove('flex');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            }
         });
     </script>
 </body>
