@@ -1,11 +1,18 @@
-DEPLOYMENT NOTES
+Deployment structure for the updated Speaking page
 
-Upload/push these items to your GitHub repository root:
+Upload/merge this folder into your website root:
 
-1. index.html
-2. assets/hero-background.png
+speaking.html
+assets/
+  speaking/
+    speaking-proof-01.webp
+    speaking-proof-02.webp
+    speaking-proof-03.webp
+    speaking-proof-04.webp
+    speaking-proof-05.webp
 
-The homepage now references the background image with this path:
-assets/hero-background.png
-
-For Netlify, keep the assets folder beside index.html exactly as provided. Do not rename the image unless you also update the src path inside index.html.
+Important:
+- Keep the assets folder beside speaking.html.
+- The download buttons point directly to the original WebP files in assets/speaking/.
+- Do not compress these images before upload if you want event organizers to download the same quality included here.
+- When pushing to GitHub/Netlify, commit both speaking.html and the assets/speaking folder.
