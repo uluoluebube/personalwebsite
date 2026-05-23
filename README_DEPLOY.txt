@@ -1,10 +1,14 @@
-Deployment notes for the Speaking page
+Speaking page package with Netlify Forms enabled
 
-Upload/merge these files into your GitHub repository:
+Upload/merge this full structure into your GitHub repo:
 
-- speaking.html
-- assets/speaking/
+speaking.html
+assets/speaking/
 
-The page references images using relative paths such as assets/speaking/speaker-headshot-01.png. Keep the assets folder beside speaking.html so Netlify can load previews and download links correctly.
-
-The two speaker headshot download buttons point directly to the original PNG uploads included in this package, so visitors download the full-quality files rather than compressed previews.
+Important:
+1. In Netlify, click Enable form detection.
+2. Push this updated speaking.html to GitHub.
+3. Wait for Netlify to redeploy.
+4. Go to Netlify > Forms and look for: speaking-booking
+5. Submit a test from the live Speaking page.
+6. Add email notifications in Netlify so submissions are sent to your inbox.

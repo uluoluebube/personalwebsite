@@ -279,7 +279,11 @@
                         Use this booking section to send the details of your conference, webinar, podcast, panel, class, or creative session. You can also reach out directly by phone or email.
                     </p>
                     
-                    <form action="mailto:uluoluebube@gmail.com" method="GET" enctype="text/plain" class="space-y-4">
+                    <form name="speaking-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                        <input type="hidden" name="form-name" value="speaking-booking">
+                        <p class="hidden" aria-hidden="true">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                        </p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input type="text" name="name" placeholder="NAME" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
                             <input type="email" name="email" placeholder="EMAIL" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
