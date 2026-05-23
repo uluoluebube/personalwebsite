@@ -13,58 +13,25 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        onyx: '#0A0A0A',
-                        studio: '#121212',
-                        accent: '#FF3C11',
-                    }
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: { onyx: '#0A0A0A', studio: '#121212', accent: '#FF3C11' }
                 }
             }
         }
     </script>
     <style>
-        body {
-            background-color: #0A0A0A;
-            color: #F4F4F5;
-            overflow-x: hidden;
-        }
-        .editorial-border {
-            border-color: rgba(255, 255, 255, 0.14);
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            filter: blur(4px);
-            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform, opacity, filter;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0);
-        }
-
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-
-        @keyframes heroFadeUp {
-            0% { opacity: 0; transform: translateY(30px); filter: blur(4px); }
-            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
-        }
-        .animate-hero {
-            animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
+        body { background-color: #0A0A0A; color: #F4F4F5; overflow-x: hidden; }
+        .editorial-border { border-color: rgba(255, 255, 255, 0.14); }
+        .reveal { opacity: 0; transform: translateY(40px); filter: blur(4px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity, filter; }
+        .reveal.active { opacity: 1; transform: translateY(0); filter: blur(0); }
+        @keyframes heroFadeUp { 0% { opacity: 0; transform: translateY(30px); filter: blur(4px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0); } }
+        .animate-hero { animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white">
 
-    <header class="fixed top-0 w-full z-50 border-b editorial-border bg-onyx/90 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50">
+    <header class="fixed top-0 w-full border-b editorial-border bg-[#0A0A0A] md:bg-onyx/90 md:backdrop-blur-md" style="z-index: 9999 !important;">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative" style="z-index: 10001 !important;">
             <a href="index.html" class="text-xs font-bold tracking-[0.3em] uppercase hover:opacity-80 transition-opacity">
                 Ulu Oluebubechukwu
             </a>
@@ -81,7 +48,7 @@
                     Initiate Brief
                 </a>
                 
-                <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2 relative z-50" aria-label="Toggle Navigation Menu">
+                <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2" aria-label="Toggle Navigation Menu">
                     <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="square" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -92,7 +59,7 @@
             </div>
         </div>
 
-        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 w-full h-[100dvh] bg-onyx/98 backdrop-blur-xl flex-col justify-between p-8 pt-28 pb-12 z-40">
+        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 w-full h-[100dvh] flex-col justify-between p-8 pt-28 pb-12" style="background-color: #0A0A0A !important; z-index: 10000 !important;">
             <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400 mt-4">
                 <a href="index.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Home</a>
                 <a href="about.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">About</a>
@@ -108,7 +75,6 @@
     </header>
 
     <main class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto">
-        
         <section class="border-b editorial-border pb-12 md:pb-16 mb-12 md:mb-20">
             <div class="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-zinc-900/80 mb-4 opacity-0 animate-hero" style="animation-delay: 50ms;">
                 <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
@@ -120,7 +86,6 @@
         </section>
 
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-            
             <div class="lg:col-span-4 lg:sticky lg:top-28 h-fit space-y-6 md:space-y-8">
                 <div>
                     <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 mb-2">Stage Ethos</h2>
@@ -140,7 +105,6 @@
             </div>
 
             <div class="lg:col-span-8 space-y-12 md:space-y-16">
-                
                 <div class="reveal">
                     <p class="text-lg md:text-2xl text-zinc-200 font-light leading-relaxed">
                         With over <strong class="text-white font-medium">3 years of active public speaking engagement</strong> and an operational design tenure spanning more than 7 years, my talks cross-examine advanced design infrastructure, workflow acceleration, and clear product engineering paradigms for global spaces.
@@ -149,7 +113,6 @@
 
                 <div class="space-y-6 reveal">
                     <h3 class="text-xs font-bold tracking-widest text-accent uppercase">// Speaking Frameworks</h3>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="p-6 border editorial-border bg-studio/50">
                             <span class="text-[10px] font-mono text-zinc-500 block mb-3">KEYNOTE VECTOR A</span>
@@ -169,7 +132,6 @@
                 </div>
 
                 <div class="p-6 md:p-8 border border-zinc-800 bg-studio relative overflow-hidden reveal">
-                    <div class="absolute -top-6 -right-6 p-4 opacity-[0.02] text-7xl md:text-9xl font-bold font-mono pointer-events-none select-none">STAGE</div>
                     <span class="text-[9px] font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 px-2.5 py-1 uppercase mb-4 inline-block">BOOKING RESERVATION PORTAL</span>
                     <h4 class="text-xl font-bold tracking-tight text-white mb-3">Secure Priority Calendar Windows</h4>
                     <p class="text-sm text-zinc-300 font-light leading-relaxed mb-6">
@@ -178,8 +140,8 @@
                     
                     <form action="mailto:uluoluebube@gmail.com" method="GET" enctype="text/plain" class="space-y-4 max-w-xl">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <input type="text" placeholder="ORGANIZATION NAME" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
-                            <input type="email" placeholder="DIRECT CONTACT EMAIL" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                            <input type="text" name="organization" placeholder="ORGANIZATION NAME" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                            <input type="email" name="email" placeholder="DIRECT CONTACT EMAIL" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
                         </div>
                         <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-white text-onyx font-bold tracking-widest text-xs uppercase hover:bg-zinc-200 transition-colors">
                             Join Booking Pipeline
@@ -199,7 +161,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
