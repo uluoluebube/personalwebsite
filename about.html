@@ -92,12 +92,12 @@
             </div>
         </div>
 
-        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 bg-black/60 backdrop-blur-2xl border-b editorial-border flex-col justify-between p-8 pt-32 transition-all duration-500 opacity-0 transform translate-y-[-10px] z-40">
-            <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400">
-                <a href="index.html" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Home</a>
-                <a href="about.html" class="text-white border-b border-zinc-800/50 pb-2">About</a>
-                <a href="index.html#ecosystem" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Ecosystem</a>
-                <a href="speaking.html" class="hover:text-white border-b border-zinc-800/50 pb-2 transition-colors">Speaking</a>
+        <div id="mobile-navigation-overlay" class="hidden fixed inset-0 w-full h-[100dvh] bg-onyx/98 backdrop-blur-xl flex-col justify-between p-8 pt-28 pb-12 z-40">
+            <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400 mt-4">
+                <a href="index.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Home</a>
+                <a href="about.html" class="text-white border-b border-zinc-800/40 pb-2">About</a>
+                <a href="index.html#ecosystem" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Ecosystem</a>
+                <a href="speaking.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Speaking</a>
             </nav>
             <div class="space-y-6">
                 <a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">
@@ -281,23 +281,14 @@
 
             trigger.addEventListener('click', () => {
                 if (overlay.classList.contains('hidden')) {
-                    // Switch display block state to flex explicitly to trigger backdrop filters correctly
                     overlay.classList.remove('hidden');
                     overlay.classList.add('flex');
-                    setTimeout(() => {
-                        overlay.classList.add('opacity-100', 'translate-y-0');
-                        overlay.classList.remove('opacity-0', 'translate-y-[-10px]');
-                    }, 10);
                     openIcon.classList.add('hidden');
                     closeIcon.classList.remove('hidden');
                     document.body.classList.add('overflow-hidden');
                 } else {
-                    overlay.classList.add('opacity-0', 'translate-y-[-10px]');
-                    overlay.classList.remove('opacity-100', 'translate-y-0');
-                    setTimeout(() => { 
-                        overlay.classList.remove('flex');
-                        overlay.classList.add('hidden'); 
-                    }, 500);
+                    overlay.classList.add('hidden');
+                    overlay.classList.remove('flex');
                     openIcon.classList.remove('hidden');
                     closeIcon.classList.add('hidden');
                     document.body.classList.remove('overflow-hidden');
