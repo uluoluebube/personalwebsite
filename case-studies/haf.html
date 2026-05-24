@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAF Case Study — Ulu Oluebubechukwu</title>
@@ -16,6 +16,9 @@
         @keyframes heroFadeUp { 0% { opacity: 0; transform: translateY(30px); filter: blur(4px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0); } }
         .animate-hero { animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         video { display: block; width: 100%; height: auto; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white">

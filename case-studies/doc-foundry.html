@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doc Foundry Case Study — Ulu Oluebubechukwu</title>
@@ -20,7 +20,10 @@
 
         .motion-card video { display:block; width:100%; height:auto; background:#06090A; }
         .motion-note { color: rgba(255,255,255,0.58); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
-</style>
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+    </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white">
 <header class="fixed top-0 w-full border-b editorial-border bg-[#0A0A0A] md:bg-onyx/90 md:backdrop-blur-md" style="z-index: 9999 !important;">
