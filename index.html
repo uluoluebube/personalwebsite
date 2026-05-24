@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,6 +65,9 @@
                     linear-gradient(180deg, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.28) 46%, rgba(10,10,10,0.94) 100%);
             }
         }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
     </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white">
@@ -85,7 +88,7 @@
             </nav>
             
             <div class="flex items-center gap-4">
-                <a href="mailto:uluoluebube@gmail.com" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500">
+                <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500">
                     Get In Touch
                 </a>
                 
@@ -110,7 +113,7 @@
                 <a href="podcast.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Podcast</a>
             </nav>
             <div class="space-y-6">
-                <a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">
+                <a href="contact.html" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">
                     Get In Touch
                 </a>
             </div>

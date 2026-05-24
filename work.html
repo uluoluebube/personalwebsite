@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work — Ulu Oluebubechukwu</title>
@@ -17,7 +17,10 @@
         .animate-hero { animation: heroFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .work-image { transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1), filter 900ms cubic-bezier(0.16, 1, 0.3, 1); }
         .work-card:hover .work-image { transform: scale(1.045); filter: saturate(1.08) contrast(1.05); }
-</style>
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+    </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white">
 <header class="fixed top-0 w-full border-b editorial-border bg-[#0A0A0A] md:bg-onyx/90 md:backdrop-blur-md" style="z-index: 9999 !important;">
@@ -30,7 +33,7 @@
 <a href="speaking.html" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Speaking</a>
 <a href="podcast.html" class="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300">Podcast</a></nav>
             <div class="flex items-center gap-4">
-                <a href="mailto:uluoluebube@gmail.com" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500">Get In Touch</a>
+                <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border hover:bg-white hover:text-onyx transition-all duration-500">Get In Touch</a>
                 <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2" aria-label="Toggle Navigation Menu" aria-expanded="false">
                     <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -44,7 +47,7 @@
 <a href="index.html#ecosystem" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Ecosystem</a>
 <a href="speaking.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Speaking</a>
 <a href="podcast.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Podcast</a></nav>
-            <div class="space-y-6"><a href="mailto:uluoluebube@gmail.com" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">Get In Touch</a></div>
+            <div class="space-y-6"><a href="contact.html" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-white bg-transparent">Get In Touch</a></div>
         </div>
     </header>
     <main class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto">
