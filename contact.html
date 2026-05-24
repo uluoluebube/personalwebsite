@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me — Ulu Oluebubechukwu</title>
+    <meta name="description" content="Contact Ulu Oluebubechukwu for brand identity design, strategy, product design, visual systems, speaking engagements, and event bookings.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { onyx: '#0A0A0A', studio: '#121212', accent: '#FF3C11' } } } }</script>
+    <style>
+        body { background-color:#0A0A0A; color:#F4F4F5; overflow-x:hidden; }
+        .editorial-border { border-color: rgba(255,255,255,.14); }
+        .reveal { opacity:0; transform: translateY(40px); filter: blur(4px); transition: all 1.2s cubic-bezier(.16,1,.3,1); }
+        .reveal.active { opacity:1; transform: translateY(0); filter: blur(0); }
+        @keyframes heroFadeUp { 0% { opacity:0; transform:translateY(30px); filter:blur(4px); } 100% { opacity:1; transform:translateY(0); filter:blur(0); } }
+        .animate-hero { animation: heroFadeUp 1.4s cubic-bezier(.16,1,.3,1) forwards; }
+        .form-input { width:100%; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); padding:14px 16px; color:#fff; outline:none; transition:all .25s ease; border-radius:0; }
+        .form-input:focus { border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.07); }
+        .form-input::placeholder { color:rgba(255,255,255,.38); }
+        select.form-input { color:#fff; }
+        select.form-input option { background:#121212; color:#fff; }
+
+        .custom-select { position: relative; }
+        .custom-select-button { width:100%; background:#0A0A0A; border:1px solid rgba(255,255,255,.14); padding:14px 44px 14px 16px; color:#d4d4d8; outline:none; transition:all .25s ease; border-radius:0; text-align:left; text-transform:uppercase; font-size:12px; font-weight:500; letter-spacing:.08em; }
+        .custom-select-button:hover, .custom-select.open .custom-select-button { border-color:#FF3C11; color:#fff; background:rgba(255,255,255,.04); }
+        .custom-select-button::after { content:'⌄'; position:absolute; right:16px; top:50%; transform:translateY(-55%); color:#fff; font-size:18px; line-height:1; pointer-events:none; }
+        .custom-select-menu { position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:50; background:#0A0A0A; border:1px solid rgba(255,255,255,.22); box-shadow:0 22px 60px rgba(0,0,0,.55); max-height:260px; overflow:auto; display:none; }
+        .custom-select.open .custom-select-menu { display:block; }
+        .custom-option { width:100%; display:block; padding:13px 16px; background:#0A0A0A; color:#f4f4f5; text-align:left; text-transform:uppercase; font-size:12px; font-weight:500; letter-spacing:.04em; transition:all .18s ease; }
+        .custom-option:hover, .custom-option:focus, .custom-option[aria-selected="true"] { background:rgba(255,60,17,.16); color:#fff; outline:none; }
+
+        .contact-toggle {
+            display:block;
+            width:100%;
+            border:1px solid rgba(255,255,255,.14);
+            background:transparent;
+            color:#F4F4F5;
+            transition:background .22s ease, color .22s ease, border-color .22s ease, transform .22s ease;
+        }
+        .contact-toggle:not(.toggle-active):hover {
+            background:#ffffff;
+            color:#0A0A0A;
+            border-color:#ffffff;
+            transform:translateY(-1px);
+        }
+        .contact-toggle.toggle-active {
+            background:#ffffff;
+            color:#0A0A0A;
+            border-color:#ffffff;
+        }
+        .contact-toggle.toggle-active:hover {
+            background:#e4e4e7;
+            color:#0A0A0A;
+            border-color:#e4e4e7;
+            transform:translateY(-1px);
+        }
+
+        .modal-backdrop { background: rgba(0,0,0,.76); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-accent selection:text-white">
+<header class="fixed top-0 w-full border-b editorial-border bg-[#0A0A0A] md:bg-onyx/90 md:backdrop-blur-md" style="z-index:9999!important;">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative" style="z-index:10001!important;">
+        <a href="index.html" class="text-xs font-bold tracking-[0.3em] uppercase hover:opacity-80 transition-opacity">Ulu Oluebubechukwu</a>
+        <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-widest uppercase text-zinc-300">
+            <a href="index.html" class="hover:text-white transition-colors">Home</a>
+            <a href="work.html" class="hover:text-white transition-colors">Work</a>
+            <a href="about.html" class="hover:text-white transition-colors">About</a>
+            <a href="index.html#ecosystem" class="hover:text-white transition-colors">Ecosystem</a>
+            <a href="speaking.html" class="hover:text-white transition-colors">Speaking</a>
+            <a href="podcast.html" class="hover:text-white transition-colors">Podcast</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase border editorial-border bg-white text-onyx transition-all duration-500">Get In Touch</a>
+            <button id="mobile-menu-trigger" class="block md:hidden text-white focus:outline-none p-2" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-navigation-overlay" class="hidden fixed inset-0 w-full h-[100dvh] flex-col justify-between p-8 pt-28 pb-12" style="background-color:rgba(10,10,10,.94)!important;backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);z-index:10000!important;">
+        <nav class="flex flex-col gap-6 text-xl font-medium tracking-widest uppercase text-zinc-400 mt-4">
+            <a href="index.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Home</a>
+            <a href="work.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Work</a>
+            <a href="about.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">About</a>
+            <a href="index.html#ecosystem" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Ecosystem</a>
+            <a href="speaking.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Speaking</a>
+            <a href="podcast.html" class="hover:text-white border-b border-zinc-800/40 pb-2 transition-colors">Podcast</a>
+        </nav>
+        <div class="space-y-6"><a href="contact.html" class="flex items-center justify-center w-full py-4 text-xs font-semibold tracking-wider uppercase border editorial-border text-onyx bg-white">Get In Touch</a></div>
+    </div>
+</header>
+
+<main class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto">
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 border-b editorial-border pb-12 md:pb-20 mb-12 md:mb-20">
+        <div class="lg:col-span-7">
+            <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-4 opacity-0 animate-hero" style="animation-delay:100ms;">// CONTACT ME</span>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-white leading-[1.0] opacity-0 animate-hero" style="animation-delay:250ms;">Let’s build the right thing.</h1>
+        </div>
+        <div class="lg:col-span-5 lg:pt-14 opacity-0 animate-hero" style="animation-delay:450ms;">
+            <p class="text-base md:text-xl text-zinc-300 font-light leading-relaxed">Use the form that matches what you need. Send a project inquiry for design, brand, product, or website work — or switch to event booking if you want to invite me to speak.</p>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <aside class="lg:col-span-4 reveal">
+            <div class="border editorial-border bg-studio p-6 md:p-8 sticky top-28">
+                <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-500 block mb-4">Choose Request Type</span>
+                <div class="grid grid-cols-1 gap-3" role="tablist" aria-label="Contact form type">
+                    <button type="button" id="projectToggle" class="contact-toggle toggle-active px-5 py-4 text-left text-xs font-bold tracking-widest uppercase" aria-selected="true">Project Inquiry</button>
+                    <button type="button" id="speakingToggle" class="contact-toggle px-5 py-4 text-left text-xs font-bold tracking-widest uppercase" aria-selected="false">Speaking / Event Booking</button>
+                </div>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed mt-6">For direct messages, you can also email <a href="mailto:uluoluebube@gmail.com" class="text-white underline underline-offset-4">uluoluebube@gmail.com</a>.</p>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-8 reveal">
+            <form id="projectForm" name="project-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="border editorial-border bg-studio p-6 md:p-10 space-y-5">
+                <input type="hidden" name="form-name" value="project-inquiry">
+                <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field"></label></p>
+                <div><h2 class="text-2xl md:text-4xl font-bold tracking-tight text-white">Project Inquiry</h2><p class="text-zinc-400 font-light mt-3">Tell me what you’re building, what kind of support you need, and the best way to reach you.</p></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input class="form-input" type="text" name="full-name" placeholder="Full Name" required>
+                    <input class="form-input" type="email" name="email" placeholder="Email Address" required>
+                    <input class="form-input" type="text" name="company-brand" placeholder="Company / Brand Name">
+                    <select class="form-input" name="project-type" required>
+                        <option value="">Project Type</option><option>Brand Identity Design</option><option>Brand Strategy</option><option>Logo Design</option><option>Visual Marketing Designs</option><option>Web UI / Website Design</option><option>Product / Tool Design</option><option>Pitch Deck / Presentation Design</option><option>Consultation</option><option>Other</option>
+                    </select>
+                    <select class="form-input" name="budget-range" required>
+                        <option value="">Budget Range</option><option>Below ₦500k</option><option>₦500k – ₦1m</option><option>₦1m – ₦3m</option><option>₦3m – ₦5m</option><option>₦5m+</option><option>Not sure yet</option>
+                    </select>
+                    <select class="form-input" name="timeline" required>
+                        <option value="">Timeline</option><option>ASAP</option><option>Within 2–4 weeks</option><option>Within 1–2 months</option><option>Within 3+ months</option><option>Still planning</option>
+                    </select>
+                    <select class="form-input md:col-span-2" name="preferred-contact-method" required>
+                        <option value="">Preferred Contact Method</option><option>Email</option><option>WhatsApp</option><option>Phone Call</option><option>Google Meet / Zoom</option>
+                    </select>
+                </div>
+                <textarea class="form-input min-h-[180px]" name="project-details" placeholder="Project Details — what do you need, what are your goals, and what context should I know?" required></textarea>
+                <button type="submit" class="w-full md:w-auto px-8 py-4 bg-white text-onyx text-xs font-bold tracking-widest uppercase hover:bg-zinc-200 transition-colors">Send Project Inquiry</button>
+            </form>
+
+            <form id="speakingForm" name="speaking-booking-contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="hidden border editorial-border bg-studio p-6 md:p-8 relative overflow-hidden space-y-4">
+                <input type="hidden" name="form-name" value="speaking-booking-contact">
+                <p class="hidden" aria-hidden="true">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                </p>
+                <div class="absolute -top-6 -right-6 p-4 opacity-[0.02] text-7xl md:text-9xl font-bold font-mono pointer-events-none select-none">BOOK</div>
+                <div class="relative z-10">
+                    <span class="text-[9px] font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 px-2.5 py-1 uppercase mb-4 inline-block">BOOK ULU NOW</span>
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white mb-3">Invite Me to Speak</h2>
+                    <p class="text-sm md:text-base text-zinc-300 font-light leading-relaxed mb-6">
+                        Use this booking section to send the details of your conference, webinar, podcast, panel, class, or creative session. You can also reach out directly by phone or email.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" name="name" placeholder="NAME" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                        <input type="email" name="email" placeholder="EMAIL" required class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                        <input type="tel" name="phone" placeholder="PHONE NUMBER" class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                        <input type="text" name="topic" placeholder="TOPIC I'M SPEAKING ON" class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                        <div class="custom-select" data-placeholder="LOCATION TYPE">
+                            <input type="hidden" name="location_type" required>
+                            <button type="button" class="custom-select-button">LOCATION TYPE</button>
+                            <div class="custom-select-menu" role="listbox">
+                                <button type="button" class="custom-option" data-value="Virtual">Virtual</button>
+                                <button type="button" class="custom-option" data-value="Physical">Physical</button>
+                            </div>
+                        </div>
+                        <div class="custom-select" data-placeholder="SPEAKING TYPE">
+                            <input type="hidden" name="speaking_type" required>
+                            <button type="button" class="custom-select-button">SPEAKING TYPE</button>
+                            <div class="custom-select-menu" role="listbox">
+                                <button type="button" class="custom-option" data-value="Keynote">Keynote</button>
+                                <button type="button" class="custom-option" data-value="Tutoring / Lecturing">Tutoring / Lecturing</button>
+                                <button type="button" class="custom-option" data-value="Instagram Live Guest">Instagram Live Guest</button>
+                                <button type="button" class="custom-option" data-value="YouTube Channel Guest">YouTube Channel Guest</button>
+                                <button type="button" class="custom-option" data-value="Podcast Guest">Podcast Guest</button>
+                                <button type="button" class="custom-option" data-value="Panel Discussion">Panel Discussion</button>
+                                <button type="button" class="custom-option" data-value="Interview">Interview</button>
+                            </div>
+                        </div>
+                        <input type="text" name="event_location" placeholder="EVENT LOCATION" class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full">
+                        <div class="custom-select" data-placeholder="VIRTUAL LOCATION">
+                            <input type="hidden" name="virtual_location">
+                            <button type="button" class="custom-select-button">VIRTUAL LOCATION</button>
+                            <div class="custom-select-menu" role="listbox">
+                                <button type="button" class="custom-option" data-value="Zoom">Zoom</button>
+                                <button type="button" class="custom-option" data-value="Google Meet">Google Meet</button>
+                                <button type="button" class="custom-option" data-value="Telegram">Telegram</button>
+                                <button type="button" class="custom-option" data-value="Others">Others</button>
+                            </div>
+                        </div>
+                        <input type="date" name="event_date" class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-zinc-300 font-medium focus:outline-none focus:border-accent uppercase w-full">
+                        <input type="time" name="event_time" class="bg-onyx border editorial-border p-3 text-xs tracking-wider text-zinc-300 font-medium focus:outline-none focus:border-accent uppercase w-full">
+                    </div>
+                    <textarea name="details" placeholder="TELL ME MORE ABOUT THE TOPIC / EXTRA NOTE IF ANY" rows="5" class="mt-4 bg-onyx border editorial-border p-3 text-xs tracking-wider text-white font-medium focus:outline-none focus:border-accent uppercase w-full"></textarea>
+                    <p class="text-[10px] text-zinc-500 font-light leading-relaxed mt-4">By submitting this message you consent to receiving emails from Ulu Oluebubechukwu.</p>
+                    <button type="submit" class="mt-4 w-full sm:w-auto px-6 py-3 bg-white text-onyx font-bold tracking-widest text-xs uppercase hover:bg-zinc-200 disabled:opacity-60 disabled:cursor-not-allowed transition-colors">Send It</button>
+                </div>
+            </form>
+        </section>
+    </section>
+</main>
+
+<div id="thankYouModal" class="hidden fixed inset-0 z-[20000] modal-backdrop items-center justify-center px-6">
+    <div class="max-w-xl w-full border editorial-border bg-[#101010] p-6 md:p-10 shadow-2xl">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-accent block mb-4">Message Received</span>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">Thank you. I’ll review this and get back to you.</h2>
+        <p id="modalMessage" class="text-zinc-400 font-light leading-relaxed mt-5">Your submission has been received successfully.</p>
+        <button id="closeModal" type="button" class="mt-8 w-full px-8 py-4 bg-white text-onyx text-xs font-bold tracking-widest uppercase hover:bg-zinc-200 transition-colors">Done</button>
+    </div>
+</div>
+
+<footer class="border-t editorial-border bg-onyx py-12 px-6 relative z-10 mt-16">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left text-zinc-400 text-xs">
+        <div class="tracking-widest uppercase font-medium order-2 md:order-1">&copy; 2026 Ulu Oluebubechukwu. All Rights Reserved.</div>
+        <div class="flex flex-wrap justify-center gap-6 font-semibold tracking-wider uppercase text-zinc-300 order-1 md:order-2"><a href="https://linkedin.com/in/uluoluebube" target="_blank" class="hover:text-white transition-colors">LinkedIn</a><a href="https://twitter.com/uluoluebube" target="_blank" class="hover:text-white transition-colors">Twitter</a><a href="https://instagram.com/uluoluebube" target="_blank" class="hover:text-white transition-colors">Instagram</a></div>
+        <div class="font-light italic text-[11px] text-zinc-500 order-3 w-full md:w-auto md:text-right">Grounded brand strategy & tools.</div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } }); }, { threshold:.1, rootMargin:'0px 0px -50px 0px' });
+    reveals.forEach(el => revealOnScroll.observe(el));
+    const trigger = document.getElementById('mobile-menu-trigger'); const overlay = document.getElementById('mobile-navigation-overlay'); const openIcon = document.getElementById('menu-icon-open'); const closeIcon = document.getElementById('menu-icon-close');
+    function closeMenu(){ overlay.classList.add('hidden'); overlay.classList.remove('flex'); openIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); document.body.classList.remove('overflow-hidden'); trigger.setAttribute('aria-expanded','false'); }
+    function openMenu(){ overlay.classList.remove('hidden'); overlay.classList.add('flex'); openIcon.classList.add('hidden'); closeIcon.classList.remove('hidden'); document.body.classList.add('overflow-hidden'); trigger.setAttribute('aria-expanded','true'); }
+    if (trigger && overlay) trigger.addEventListener('click', () => overlay.classList.contains('hidden') ? openMenu() : closeMenu());
+
+    const projectToggle=document.getElementById('projectToggle'); const speakingToggle=document.getElementById('speakingToggle'); const projectForm=document.getElementById('projectForm'); const speakingForm=document.getElementById('speakingForm');
+    function showProject(){ projectForm.classList.remove('hidden'); speakingForm.classList.add('hidden'); projectToggle.classList.add('toggle-active'); speakingToggle.classList.remove('toggle-active'); projectToggle.setAttribute('aria-selected','true'); speakingToggle.setAttribute('aria-selected','false'); }
+    function showSpeaking(){ speakingForm.classList.remove('hidden'); projectForm.classList.add('hidden'); speakingToggle.classList.add('toggle-active'); projectToggle.classList.remove('toggle-active'); speakingToggle.setAttribute('aria-selected','true'); projectToggle.setAttribute('aria-selected','false'); }
+    projectToggle.addEventListener('click', showProject); speakingToggle.addEventListener('click', showSpeaking);
+
+    const modal=document.getElementById('thankYouModal'); const closeModal=document.getElementById('closeModal'); const modalMessage=document.getElementById('modalMessage');
+    function encode(data){ return new URLSearchParams(data).toString(); }
+    function openThanks(message){ modalMessage.textContent=message; modal.classList.remove('hidden'); modal.classList.add('flex'); }
+    function closeThanks(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
+    closeModal.addEventListener('click', closeThanks); modal.addEventListener('click', e => { if(e.target === modal) closeThanks(); }); document.addEventListener('keydown', e => { if(e.key === 'Escape') closeThanks(); });
+
+    document.querySelectorAll('.custom-select').forEach(select => {
+        const button = select.querySelector('.custom-select-button');
+        const input = select.querySelector('input[type="hidden"]');
+        const options = select.querySelectorAll('.custom-option');
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.custom-select.open').forEach(openSelect => { if (openSelect !== select) openSelect.classList.remove('open'); });
+            select.classList.toggle('open');
+        });
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                const value = option.dataset.value;
+                input.value = value;
+                button.textContent = value;
+                options.forEach(item => item.setAttribute('aria-selected','false'));
+                option.setAttribute('aria-selected','true');
+                select.classList.remove('open');
+            });
+        });
+    });
+    document.addEventListener('click', event => {
+        if (!event.target.closest('.custom-select')) document.querySelectorAll('.custom-select.open').forEach(select => select.classList.remove('open'));
+    });
+
+    [projectForm, speakingForm].forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const button=form.querySelector('button[type="submit"]'); const original=button.textContent; button.textContent='Sending...'; button.disabled=true;
+            try { await fetch('/', { method:'POST', headers:{ 'Content-Type':'application/x-www-form-urlencoded' }, body: encode(new FormData(form)) }); form.reset(); openThanks(form.id === 'projectForm' ? 'Your project inquiry has been received. I’ll review the details and get back to you with the next best step.' : 'Your speaking or event booking request has been received. I’ll review the details and respond as soon as possible.'); }
+            catch(err){ openThanks('Your browser had trouble submitting the form. Please email uluoluebube@gmail.com directly if this message does not go through.'); }
+            finally { button.textContent=original; button.disabled=false; }
+        });
+    });
+});
+</script>
+</body>
+</html>
